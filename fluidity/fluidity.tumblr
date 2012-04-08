@@ -22,111 +22,115 @@
           <div id="searchresults">No search results for {SearchQuery}</div>
         {/block:NoSearchResults}
       {/block:SearchPage}
-      {block:Posts}
-        <div class="post">
-          {block:Photo}
-            <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
-            {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
-          {/block:Photo}
-          {block:Video}
-            <div class="media">{Video-500}</div>
-            {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
-          {/block:Video}
-          {block:Audio}
-            {block:AlbumArt}
-              <div class="album_art">
-                <img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" style="margin-bottom:10px;" />
-              </div>
-            {/block:AlbumArt}
-            <div class="audio">
-              <div class="player">{AudioPlayerWhite}</div>
-              <div class="meta">{PlayCountWithLabel}{block:ExternalAudio}<span class="download_external_audio"> &bull; <a href="{ExternalAudioURL}">{lang:Download}</a></span>{/block:ExternalAudio}</div>
-              <div class="clear"></div>
-            </div>
-            <div class="clear"></div>
-            {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
-          {/block:Audio}
-          {block:Quote}
-            <div class="quote {Length}">{Quote}</div>
-            <div class="copy">
-              <div class="quotebg">“</div>
-              {block:Source}
-                <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                  <tr>
-                    <td valign="top" style="width:20px;">&mdash;</td>
-                    <td valign="top" class="quote_source">
-                      {Source}
-                    </td>
-                  </tr>
-                </table>
-              {/block:Source}
-            </div>
-          {/block:Quote}
-          {block:Text}
-            {block:Title}<div class="title">{Title}</div>{/block:Title}
-            <div class="copy">{Body}</div>
-          {/block:Text}
-          {block:Answer}
-            <div class="question">
-              <div class="nipple"></div>
-              {Question}
-            </div>
-            <div class="asker_container"><img src="{AskerPortraitURL-24}">{Asker}</div>
-            <div class="copy">{Answer}</div>
-          {/block:Answer}
-          {block:Chat}
-            {block:Title}<div class="title">{Title}</div>{/block:Title}
-            <div class="chat">
-              <div class="lines">
-                {block:Lines}
-                  <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
-                {/block:Lines}
-              </div>
-            </div>
-            <div class="clear"></div>
-            <div style="height:10px;"></div>
-          {/block:Chat}
-          {block:Link}
-            <div class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></div>
-            {block:Description}<div class="copy">{Description}</div>{/block:Description}
-          {/block:Link}
+      
+      <div id="posts-wrapper">
+        <div id="posts" class="clearfix">
+          {block:Posts}
+            <div class="post">
+              {block:Photo}
+                <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
+                {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+              {/block:Photo}
+              {block:Video}
+                <div class="media">{Video-500}</div>
+                {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+              {/block:Video}
+              {block:Audio}
+                {block:AlbumArt}
+                  <div class="album_art">
+                    <img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" style="margin-bottom:10px;" />
+                  </div>
+                {/block:AlbumArt}
+                <div class="audio">
+                  <div class="player">{AudioPlayerWhite}</div>
+                  <div class="meta">{PlayCountWithLabel}{block:ExternalAudio}<span class="download_external_audio"> &bull; <a href="{ExternalAudioURL}">{lang:Download}</a></span>{/block:ExternalAudio}</div>
+                  <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+                {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+              {/block:Audio}
+              {block:Quote}
+                <div class="quote {Length}">{Quote}</div>
+                <div class="copy">
+                  <div class="quotebg">“</div>
+                  {block:Source}
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td valign="top" style="width:20px;">&mdash;</td>
+                        <td valign="top" class="quote_source">
+                          {Source}
+                        </td>
+                      </tr>
+                    </table>
+                  {/block:Source}
+                </div>
+              {/block:Quote}
+              {block:Text}
+                {block:Title}<div class="title">{Title}</div>{/block:Title}
+                <div class="copy">{Body}</div>
+              {/block:Text}
+              {block:Answer}
+                <div class="question">
+                  <div class="nipple"></div>
+                  {Question}
+                </div>
+                <div class="asker_container"><img src="{AskerPortraitURL-24}">{Asker}</div>
+                <div class="copy">{Answer}</div>
+              {/block:Answer}
+              {block:Chat}
+                {block:Title}<div class="title">{Title}</div>{/block:Title}
+                <div class="chat">
+                  <div class="lines">
+                    {block:Lines}
+                      <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
+                    {/block:Lines}
+                  </div>
+                </div>
+                <div class="clear"></div>
+                <div style="height:10px;"></div>
+              {/block:Chat}
+              {block:Link}
+                <div class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></div>
+                {block:Description}<div class="copy">{Description}</div>{/block:Description}
+              {/block:Link}
           
-          <a href="{Permalink}">
-            <div class="footer for_permalink">
-              <div class="date">
-                {block:Reblog}
-                Reblogged {TimeAgo} from {ReblogParentName}
-                {block:RebloggedFromReblog}(<span style="text-transform:lowercase;">Originally from {ReblogRootName}</span>){/block:RebloggedFromReblog}
-                {/block:Reblog}
-                &nbsp;
-                {block:Date}
-                Posted {TimeAgo} from {source}
-                {/block:Date}
-              </div>
-              <div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</div>
-              <div class="clear"></div>
-            </div>
-          </a>
-          
-          <div class="footer {block:ContentSource}with_source_url{/block:ContentSource}" style="
-            display:none;
-            {block:HasTags}display:block;{/block:HasTags}
-            {block:ContentSource}display:block;{/block:ContentSource}
-          ">
-            {block:HasTags}<div class="tags">{lang:Tagged}: {block:Tags}<a href="{TagURL}">{Tag}</a><span class="tag-commas">, </span>{/block:Tags}.</div>{/block:HasTags}
-            
-            {block:ContentSource}
-              <a href="{SourceURL}" class="source_url">
-                {lang:Source}:
-                {SourceTitle}
+              <a href="{Permalink}">
+                <div class="footer for_permalink">
+                  <div class="date">
+                    {block:Reblog}
+                    Reblogged {TimeAgo} from {ReblogParentName}
+                    {block:RebloggedFromReblog}(<span style="text-transform:lowercase;">Originally from {ReblogRootName}</span>){/block:RebloggedFromReblog}
+                    {/block:Reblog}
+                    &nbsp;
+                    {block:Date}
+                    Posted {TimeAgo} from {source}
+                    {/block:Date}
+                  </div>
+                  <div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</div>
+                  <div class="clear"></div>
+                </div>
               </a>
-            {/block:ContentSource}
-            <div class="clear"></div>
-          </div>
-          {block:PostNotes}<div class="notecontainer">{PostNotes}</div>{/block:PostNotes}
+          
+              <div class="footer {block:ContentSource}with_source_url{/block:ContentSource}" style="
+                display:none;
+                {block:HasTags}display:block;{/block:HasTags}
+                {block:ContentSource}display:block;{/block:ContentSource}
+              ">
+                {block:HasTags}<div class="tags">{lang:Tagged}: {block:Tags}<a href="{TagURL}">{Tag}</a><span class="tag-commas">, </span>{/block:Tags}.</div>{/block:HasTags}
+            
+                {block:ContentSource}
+                  <a href="{SourceURL}" class="source_url">
+                    {lang:Source}:
+                    {SourceTitle}
+                  </a>
+                {/block:ContentSource}
+                <div class="clear"></div>
+              </div>
+              {block:PostNotes}<div class="notecontainer">{PostNotes}</div>{/block:PostNotes}
+            </div>
+          {/block:Posts}
         </div>
-        <div class="bottom"></div>
-      {/block:Posts}
+      </div>
       
       {block:Pagination}
         <div id="navigation">
@@ -137,6 +141,7 @@
       
     </div>
     
+    <!--
     <div id="sidebar">
       <div id="top">
         <div id="avatar"><a href="/"><img src="{PortraitURL-128}" /></a></div>
@@ -194,6 +199,7 @@
       <div id="bottom"></div>
       <div id="copyright">&copy; 2011 <a href="http://www.tumblr.com">{lang:Powered by Tumblr}</a></div>
     </div>
+    -->
     <div class="clear"></div>
   </div>
   <script type="text/javascript" src="themes/fluidity/lib/jquery-1.7.2.min.js"></script>

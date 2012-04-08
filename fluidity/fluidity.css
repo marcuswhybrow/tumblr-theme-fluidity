@@ -143,6 +143,45 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 /* Now Marcus' specific styling
 -------------------------------------------------------------------------------*/
 
+body {
+    font: 20px Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+    color: #333;
+    line-height: 26px;
+}
+
+#header {
+    background-color: #eee;
+    padding: 20px;
+}
+
+#header #title {
+    font-size: 28px;
+}
+
+#content {
+    width: 100%;
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    overflow-x: hidden;
+}
+
+#posts-wrapper {
+    width: 820px;
+    margin: 40px auto 0;
+}
+
+#posts {
+    width: 9999px;
+}
+
+#posts .post {
+    width: 820px;
+    float: left;
+    margin-right: 80px;
+}
 
 
 
