@@ -5,13 +5,15 @@
   
   <!-- Body elements -->
   <div id="wrapper">
-    <div id="header">
-      <div id="title">
-        <a href="/">
-          {Title}
-        </a>
+    <header>
+      <div class="inner">
+        <div id="title">
+          <a href="/">
+            {Title}
+          </a>
+        </div>
       </div>
-    </div>
+    </header>
     <div id="content">
       {block:SearchPage}
         {block:SearchResults}
@@ -26,19 +28,19 @@
       <div id="posts-wrapper">
         <div id="newerPostButton">&#x2190;</div>
         <div id="olderPostButton">&#x2192;</div>
-        <div id="posts" class="clearfix">
+        <div id="posts">
           {block:Posts}
             <article class="post">
               {block:Photo}
                 <div class="media">{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}</div>
                 {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
               {/block:Photo}
-              
+            
               {block:Video}
                 <div class="media">{Video-500}</div>
                 {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
               {/block:Video}
-              
+            
               {block:Audio}
                 {block:AlbumArt}
                   <div class="album_art">
@@ -53,7 +55,7 @@
                 <div class="clear"></div>
                 {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
               {/block:Audio}
-              
+            
               {block:Quote}
                 <div class="quote {Length}">{Quote}</div>
                 <div class="copy">
@@ -70,12 +72,12 @@
                   {/block:Source}
                 </div>
               {/block:Quote}
-              
+            
               {block:Text}
                 {block:Title}<div class="title">{Title}</div>{/block:Title}
                 <div class="copy">{Body}</div>
               {/block:Text}
-              
+            
               {block:Answer}
                 <div class="question">
                   <div class="nipple"></div>
@@ -84,7 +86,7 @@
                 <div class="asker_container"><img src="{AskerPortraitURL-24}">{Asker}</div>
                 <div class="copy">{Answer}</div>
               {/block:Answer}
-              
+            
               {block:Chat}
                 {block:Title}<div class="title">{Title}</div>{/block:Title}
                 <div class="chat">
@@ -97,15 +99,15 @@
                 <div class="clear"></div>
                 <div style="height:10px;"></div>
               {/block:Chat}
-              
+            
               {block:Link}
                 <div class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></div>
                 {block:Description}<div class="copy">{Description}</div>{/block:Description}
               {/block:Link}
-          
+        
               <footer class="{block:ContentSource}has-source-url{/block:ContentSource}">
                 <a href="{Permalink}">permalink</a>
-                
+              
                 <div class="date">
                   {block:Reblog}
                     Reblogged {TimeAgo} from {ReblogParentName}
@@ -118,20 +120,20 @@
                   {/block:Date}
                 </div>
                 <div class="notes">{block:NoteCount}{NoteCountWithLabel}{/block:NoteCount}</div>
-                
+              
                 {block:HasTags}
                   <div class="tags">
                     {lang:Tagged}: {block:Tags}<a href="{TagURL}">{Tag}</a><span class="tag-commas">, </span>{/block:Tags}.
                   </div>
                 {/block:HasTags}
-              
+            
                 {block:ContentSource}
                   <a href="{SourceURL}" class="source_url">
                     {lang:Source}:
                     {SourceTitle}
                   </a>
                 {/block:ContentSource}
-                
+              
                 {block:PostNotes}
                   <div class="notecontainer">{PostNotes}</div>
                 {/block:PostNotes}
@@ -143,8 +145,8 @@
       
       {block:Pagination}
         <div id="navigation">
-          {block:PreviousPage}<a href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}
-          {block:NextPage}<a href="{NextPage}">{lang:Next page} &rarr;</a>{/block:NextPage}
+          {block:PreviousPage}<a id="prev-page" href="{PreviousPage}">&larr; {lang:Previous}</a>{/block:PreviousPage}
+          {block:NextPage}<a id="next-page" href="{NextPage}">{lang:Next page} &rarr;</a>{/block:NextPage}
         </div>
       {/block:Pagination}
       

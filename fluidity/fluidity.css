@@ -150,12 +150,17 @@ body {
     line-height: 26px;
 }
 
-#header {
+header {
     background-color: #eee;
     padding: 20px;
 }
 
-#header #title {
+header .inner {
+    width: 820px;
+    margin: 0 auto;
+}
+
+header #title {
     font-size: 28px;
 }
 
@@ -206,29 +211,34 @@ body {
     top: 100px;
 }
 
-
 #posts-wrapper {
+    position: relative;
     width: 820px;
     margin: 40px auto 0;
-    position: relative;
-    
-    z-index: 100;
 }
 
 #posts {
-    width: 9999px;
+    width: 820px;
     position: relative;
+    
+    z-index: 100;
+    
+    overflow-x: visible;
+    
+    opacity: 0;
 }
 
 #posts .post {
     width: 820px;
-    float: left;
     margin-right: 80px;
     opacity: 0.2;
+    
+    position: absolute;
+    display: block;
 }
 
 #posts .post.focus {
-    opacity: 1.0;
+    
 }
 
 #posts .post .title {
