@@ -146,6 +146,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 body {
     font: 20px Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
     color: #333;
+    
     line-height: 26px;
 }
 
@@ -168,19 +169,95 @@ body {
     overflow-x: hidden;
 }
 
+
+#olderPostButton,
+#newerPostButton {
+    /* JavaScript deals with the appearance of these two buttons */
+    display: none;
+    
+    color: #fff;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-transform: uppercase;
+    
+    position: absolute;
+    cursor: pointer;
+    
+    border-radius: 6px;
+    opacity: 0.9;
+    z-index: 200;
+    -webkit-user-select: none;
+}
+#olderPostButton.visible,
+#newerPostButton.visible {
+    display: block;
+}
+#olderPostButton:hover,
+#newerPostButton:hover {
+    opacity: 1.0;
+}
+#newerPostButton {
+    left: -200px;
+    top: 100px;
+}
+#olderPostButton {
+    right: -200px;
+    top: 100px;
+}
+
+
 #posts-wrapper {
     width: 820px;
     margin: 40px auto 0;
+    position: relative;
+    
+    z-index: 100;
 }
 
 #posts {
     width: 9999px;
+    position: relative;
 }
 
 #posts .post {
     width: 820px;
     float: left;
     margin-right: 80px;
+    opacity: 0.2;
+}
+
+#posts .post.focus {
+    opacity: 1.0;
+}
+
+#posts .post .title {
+    font-size: 38px;
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+#posts .post p {
+    margin-bottom: 1.7em;
+}
+
+#posts .post footer {
+    font-size: 15px;
+}
+
+
+
+#navigation {
+    text-align: center;
+}
+
+
+
+/* Odd bits */
+
+.superscript {
+    vertical-align: super;
+    font-size: 0.7em;
 }
 
 
