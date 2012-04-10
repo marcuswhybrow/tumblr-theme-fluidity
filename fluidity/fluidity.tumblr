@@ -152,7 +152,14 @@
               {/block:Chat}
             
               {block:Link}
-                <h1 class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></h1>
+                <hgroup>
+                  <h1 class="title">{Name}</h1>
+                  <h2 class="subtitle">
+                    <span class="arrow">&#x2192;</span>
+                    <span class="link"><a href="{URL}" {Target}>{URL}</a></span>
+                  </h2>
+                </hgroup>
+                
                 {block:Description}
                   <div class="description copy">
                     {Description}

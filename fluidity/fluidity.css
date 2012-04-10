@@ -144,7 +144,9 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 -------------------------------------------------------------------------------*/
 
 body {
-    font: 20px Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+/*    font: 20px Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;*/
+    font: 20px HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    
     color: #333;
     
     line-height: 26px;
@@ -161,6 +163,8 @@ body {
     min-width: 820px;
     background-color: #eee;
     padding: 0 10px;
+    
+    background: #333 url("images/bg-black.jpg");
 }
 
 #global-header .inner {
@@ -171,6 +175,13 @@ body {
 
 #global-header #title {
     font-size: 28px;
+    color: #fff;
+}
+
+#global-header #title a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
 }
 
 #content {
@@ -180,6 +191,9 @@ body {
     overflow-y: visible;
     
     padding: 0 10px;
+    
+    background: #e4e4e4 url("images/bg-white.png");
+    border-top: 1px solid #fff;
 }
 
 
@@ -237,16 +251,27 @@ body {
 }
 
 #posts .post {
-    width: 800px;
-    margin-right: 80px;
+    width: 820px;
+    margin-right: 200px;
     opacity: 0.2;
     
     position: absolute;
     display: block;
-}*/
+}
 
 #posts .post.focus {
     
+}
+
+
+
+a {
+    text-decoration: none;
+    color: #2a8bc7;
+}
+a:hover {
+    text-decoration: underline;
+    color: #2a8bc7;
 }
 
 
@@ -269,8 +294,16 @@ body {
 
 #posts .post h1.title {
     font-size: 38px;
-    line-height: 1em;
+    line-height: 1.2em;
     margin-bottom: 20px;
+    font-weight: normal;
+    
+/*    text-shadow: 0 0 80px #f8f;*/
+}
+
+#posts .post h1.title a {
+    color: #333;
+    text-decoration: none;
 }
 
 #posts .post p {
@@ -279,6 +312,11 @@ body {
 
 #posts .post footer {
     font-size: 15px;
+}
+
+#posts .post blockquote {
+    padding-left: 20px;
+    border-left: 10px solid rgba(0,0,0,0.5);
 }
 
 
@@ -300,10 +338,35 @@ body {
 
 /* Link Post */
 
-#posts .post.link .link {
-    font-size: 38px;
-    padding-bottom: 20px;
+#posts .post.link .title {
+    margin-bottom: 0;
 }
+#posts .post.link .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    overflow: hidden;
+    line-height: 1.2em;
+}
+#posts .post.link .subtitle .arrow {
+    display: inline-block;
+    width: 20px;
+    vertical-align: top;
+    padding-left: 2px;
+}
+#posts .post.link .subtitle .link {
+    display: inline-block;
+    width: 794px;
+}
+#posts .post.link .subtitle .link a {
+    color: #666;
+    text-decoration: none;
+    word-wrap: break-word;   
+}
+#posts .post.link .subtitle .link a:hover {
+    text-decoration: underline;
+}
+
 #posts .post.link .description {}
 
 
