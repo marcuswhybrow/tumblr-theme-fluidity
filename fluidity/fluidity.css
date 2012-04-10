@@ -313,6 +313,24 @@ body {
 }
 
 
+/* Quotation Post */
+
+#posts .post.quote .quote {
+    margin-bottom: 10px;
+}
+#posts .post.quote .quote:before,
+#posts .post.quote .quote:after {
+    content: '"';
+}
+#posts .post.quote .quote.short {}
+#posts .post.quote .quote.medium {}
+#posts .post.quote .quote.long {}
+#posts .post.quote .source {
+    text-align: center;
+    font-size: 0.8em;
+}
+
+
 
 /* Odd bits */
 
