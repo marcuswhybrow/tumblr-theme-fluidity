@@ -175,16 +175,19 @@
             
                 {block:Chat}
                   {block:Title}
-                    <h1 class="title">Chat: {Title}</h1>
+                    <h1 class="title">{Title}</h1>
                   {/block:Title}
                   <div>
                     <h2 class="g-invisible">Transcript</h2>
                     <div class="transcript">
-                      {block:Lines}
-                        <div class="line {Alt}">
-                          {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
-                        </div>
-                      {/block:Lines}
+                      <table>
+                        {block:Lines}
+                          <tr class="line">
+                            <td class="label">{block:Label}{Label}{/block:Label}</td>
+                            <td class="text">{Line}</td>
+                          </tr>
+                        {/block:Lines}
+                      </table>
                     </div>
                   </div>
                 {/block:Chat}

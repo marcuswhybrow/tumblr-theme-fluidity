@@ -155,15 +155,32 @@ $(function() {
     }
     
     function contentAlterations() {
-        // Updates video's in video posts to take up 100% of the space, whilst
-        // retaining the correct aspect ratio.
-        $('#posts .post.video iframe').each(function() {
-            var $this = $(this);
-            var width = $this.width();
-            var height = $this.height();
+        
+        $('#posts .post.chat').each(function() {
+            var labels = {};
+            var labelCount = 0;
             
-            $this.width('100%');
-            $this.height($this.width()/width * height);
+            $(this).find('.line').each(function() {
+                var $this = $(this);
+                var label = $this.find('.label').first().text();
+                
+                // Nothing to do if there is no label
+                if (label == "")
+                    return;
+
+                // Removes the ':' from the end of the lable if present
+                if (label.charAt(label.length - 1) == ':') {
+                    label = label.substring(0, label.length - 1);
+                    $this.find('.label').first().text(label);
+                }
+                
+                if (label in labels == false) {
+                    console.log(label);
+                    labels[label] = ++labelCount;
+                }
+                
+                $this.addClass('label-' + labels[label]);
+            });
         });
     }
     
@@ -175,6 +192,7 @@ $(function() {
         resizePostsContainer();
         
         introPostsAnimation();
+        contentAlterations();
     }
     
     

@@ -500,12 +500,37 @@ a:hover {
 #posts .post.chat .transcript {}
 #posts .post.chat .transcript .line {
     padding-bottom: 10px;
+    font-size: 16px;
+}
+#posts .post.chat .transcript .line .label {
+    padding-right: 20px;
+    opacity: 0.5;
+    color: #333;
+    font-size: 13px;
+    text-align: right;
 }
 #posts .post.chat .transcript .line.odd {}
 #posts .post.chat .transcript .line.even {}
-#posts .post.chat .transcript .line .label {
-    font-weight: bold;
+
+#posts .post.chat .transcript .line.label-1 {
+    color: #a00;
 }
+#posts .post.chat .transcript .line.label-2 {
+    color: #00a;
+}
+#posts .post.chat .transcript .line.label-3 {
+    color: #0a0;
+}
+#posts .post.chat .transcript .line.label-4 {
+    color: #a0a;
+}
+#posts .post.chat .transcript .line.label-5 {
+    color: #aa0;
+}
+#posts .post.chat .transcript .line.label-6 {
+    color: #0aa;
+}
+
 
 
 /* Quotation Post */
