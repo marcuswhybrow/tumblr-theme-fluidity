@@ -150,17 +150,17 @@ body {
     line-height: 26px;
 }
 
-header {
+#global-header {
     background-color: #eee;
     padding: 20px;
 }
 
-header .inner {
+#global-header .inner {
     width: 820px;
     margin: 0 auto;
 }
 
-header #title {
+#global-header #title {
     font-size: 28px;
 }
 
@@ -241,11 +241,23 @@ header #title {
     
 }
 
-#posts .post .title {
-    font-size: 38px;
-    line-height: 1em;
-    margin-bottom: 20px;
+
+
+#navigation {
+    text-align: center;
 }
+
+/* Global Classes
+-------------------------------------------------------------------------------*/
+
+.g-invisible {
+    display: none;
+}
+
+
+
+/* Post Type Styles
+-------------------------------------------------------------------------------*/
 
 #posts .post p {
     margin-bottom: 1.7em;
@@ -256,9 +268,37 @@ header #title {
 }
 
 
+/* Text Post */
 
-#navigation {
+#posts .post.text .title {
+    font-size: 38px;
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
+
+/* Answer Post */
+
+#posts .post.answer .question {
+    background-color: #eee;
     text-align: center;
+}
+#posts .post.answer .asker-wrapper {
+    
+}
+#posts .post.answer .answer {
+    
+}
+
+
+/* Link Post */
+
+#posts .post.link .link h1 {
+    font-size: 38px;
+    padding-bottom: 20px;
+}
+#posts .post.link .description {
+    
 }
 
 

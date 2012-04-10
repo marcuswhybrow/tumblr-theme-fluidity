@@ -12,7 +12,7 @@ $(function() {
         DONT: -1,
         ZERO:0, ONE:1, TWO:2, THREE:3, FOUR:4, FIVE:5, SIX:6, SEVEN:7, EIGHT:8, NINE:9
     };
-    var postLoadMargin = postLoadTypes.ZERO;
+    var postLoadMargin = postLoadTypes.DONT;
     var postWidth = 820 + 80;
     
     var posts = $('#posts');
