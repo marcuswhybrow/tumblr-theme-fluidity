@@ -175,6 +175,7 @@ body {
     width: 820px;
     margin: 0 auto;
     padding: 20px 0;
+    position: relative;
 }
 
 #global-header #title {
@@ -182,6 +183,8 @@ body {
     color: #fff;
     
     text-shadow: 0 0 2px #000;
+    
+    float: left;
 }
 
 #global-header #title a {
@@ -189,6 +192,27 @@ body {
     text-decoration: none;
     font-weight: normal;
 }
+
+
+#global-header .inner #avatar {
+    box-shadow: 0 0 3px #000;
+    
+    border-radius: 3px;
+    overflow: hidden;
+    
+    float: right;
+}
+
+#global-header .inner #avatar img {
+    display: block;
+}
+
+#global-header .inner #description {
+    float: left;
+    clear: left;
+}
+
+
 
 #content {
     min-width: 820px;
