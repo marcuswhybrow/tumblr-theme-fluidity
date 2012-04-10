@@ -210,6 +210,10 @@ $(function() {
         moveToRightPost();
     });
     
+    $(window).resize(function(e) {
+        resizePostsContainer();
+    });
+    
     
     
     /* Init
