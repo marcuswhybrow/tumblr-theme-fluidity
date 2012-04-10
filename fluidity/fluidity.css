@@ -529,13 +529,14 @@ a:hover {
 /* Photo Post */
 
 #posts .post.photo .photo-wrapper {
-    padding: 20px;
-    border: 1px solid #eaeaea;
     display: inline-block;
     
     border-radius: 3px;
+    overflow: hidden;
     
     margin-bottom: 20px;
+    
+    box-shadow: 0 0 5px #666;
 }
 #posts .post.photo .photo-wrapper .photo {
     display: block;
@@ -550,21 +551,41 @@ a:hover {
 
 /* Photoset Post */
 
-#posts .post.photoset .photoset {
+#posts .post.photoset .photoset-wrapper {
+    display: inline-block;
+    box-shadow: 0 0 5px #666;
+    border-radius: 3px;
+    overflow: hidden;
+    
+    background-color: #fafafa;
+    
+    padding: 10px;
+    
     margin-bottom: 20px;
 }
+
+#posts .post.photoset .photoset-wrapper iframe {
+    display: block;
+}
+
 #posts .post.photoset .caption {}
 
 
 /* Video Post */
 
-#posts .post.video .video {
+#posts .post.video .video-wrapper {
     margin-bottom: 20px;
+    
+    border-radius: 3px;
+    overflow: hidden;
+    
+    box-shadow: 0 0 5px #666;
 }
 
-#posts .post.video .video iframe {
+#posts .post.video .video-wrapper iframe {
     width: 820px;
     height: 461px;
+    display: block;
 }
 
 

@@ -70,7 +70,10 @@
                   <figure>
                     {LinkOpenTag}
                       <div class="photo-wrapper">
-                        <img class="photo" src="{PhotoURL-500}" alt="{PhotoAlt}" />
+                        <!-- If there are two src attributes the left most one
+                          seems to be the one used - in Safari 5 at least.
+                          However I am sure this is not validate HTML. -->
+                        <img class="photo{block:HighRes} high-res{/block:HighRes}" {block:HighRes}src="{PhotoURL-HighRes}"{/block:HighRes} src="{PhotoURL-500}" alt="{PhotoAlt}" />
                       </div>
                     {LinkCloseTag}
                     {block:Caption}
@@ -95,7 +98,7 @@
               
                 {block:Photoset}
                   <figure>
-                    <div class="photoset">{Photoset-500}</div>
+                    <div class="photoset-wrapper">{Photoset-500}</div>
                     {block:Caption}
                       <figcaption class="caption">{Caption}</figcaption>
                     {/block:Caption}
@@ -104,7 +107,11 @@
             
                 {block:Video}
                   <figure>
-                    <div class="video">{Video-500}</div>
+                    <div class="video-wrapper">
+                      <div class="video">
+                        {Video-500}
+                      </div>
+                    </div>
                     {block:Caption}
                       <figcaption class="copy">{Caption}</figcaption>
                     {/block:Caption}
