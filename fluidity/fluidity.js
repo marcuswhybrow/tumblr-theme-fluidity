@@ -138,7 +138,7 @@ $(function() {
         if (numPostsRight <= postLoadMargin) loadOlderPosts();
     }
     
-    function refreshPostsContainer() {
+    function resizePostsContainer() {
         var posts = $('#posts');
         var maxHeight = Math.max.apply(Math, posts.children('.post').map(function() { return $(this).height(); }).get());
         
@@ -160,12 +160,25 @@ $(function() {
         posts.css({'top': top - 20, 'opacity': 0}).animate({'top': top, 'opacity': 1.0}, 200, 'linear');
     }
     
+    function contentAlterations() {
+        // Updates video's in video posts to take up 100% of the space, whilst
+        // retaining the correct aspect ratio.
+        $('#posts .post.video iframe').each(function() {
+            var $this = $(this);
+            var width = $this.width();
+            var height = $this.height();
+            
+            $this.width('100%');
+            $this.height($this.width()/width * height);
+        });
+    }
+    
     
     function init() {
         olderPostsPage = getOlderPostsPage();
         newerPostsPage = getNewerPostsPage();
         initPosts();
-        refreshPostsContainer();
+        resizePostsContainer();
         
         introPostsAnimation();
     }

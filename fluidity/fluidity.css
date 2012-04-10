@@ -148,16 +148,25 @@ body {
     color: #333;
     
     line-height: 26px;
+    
+    text-align: center;
+}
+
+#wrapper {
+    text-align: left;
+    padding: 0;
 }
 
 #global-header {
+    min-width: 820px;
     background-color: #eee;
-    padding: 20px;
+    padding: 0 10px;
 }
 
 #global-header .inner {
     width: 820px;
     margin: 0 auto;
+    padding: 20px 0;
 }
 
 #global-header #title {
@@ -165,13 +174,12 @@ body {
 }
 
 #content {
-    width: 100%;
-    
-    position: absolute;
-    left: 0;
-    right: 0;
+    min-width: 820px;
     
     overflow-x: hidden;
+    overflow-y: visible;
+    
+    padding: 0 10px;
 }
 
 
@@ -229,13 +237,13 @@ body {
 }
 
 #posts .post {
-    width: 820px;
+    width: 800px;
     margin-right: 80px;
     opacity: 0.2;
     
     position: absolute;
     display: block;
-}
+}*/
 
 #posts .post.focus {
     
@@ -328,6 +336,48 @@ body {
 #posts .post.quote .source {
     text-align: center;
     font-size: 0.8em;
+}
+
+
+/* Photo Post */
+
+#posts .post.photo .photo-wrapper {
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    display: inline-block;
+    
+    border-radius: 3px;
+    
+    margin-bottom: 20px;
+}
+#posts .post.photo .photo-wrapper .photo {
+    display: block;
+}
+#posts .post.photo .caption {}
+#posts .post.photo .exif-data {}
+#posts .post.photo .exif-data .camera-info {}
+#posts .post.photo .exif-data .aperture {}
+#posts .post.photo .exif-data .exposure {}
+#posts .post.photo .exif-data .focal-length {}
+
+
+/* Photoset Post */
+
+#posts .post.photoset .photoset {
+    margin-bottom: 20px;
+}
+#posts .post.photoset .caption {}
+
+
+/* Video Post */
+
+#posts .post.video .video {
+    margin-bottom: 20px;
+}
+
+#posts .post.video .video iframe {
+    width: 820px;
+    height: 461px;
 }
 
 
