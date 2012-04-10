@@ -157,6 +157,8 @@ body {
 #wrapper {
     text-align: left;
     padding: 0;
+    
+    overflow-x: hidden;
 }
 
 #global-header {
@@ -165,6 +167,8 @@ body {
     padding: 0 10px;
     
     background: #333 url("images/bg-black.jpg");
+    
+    height: 150px;
 }
 
 #global-header .inner {
@@ -176,6 +180,8 @@ body {
 #global-header #title {
     font-size: 28px;
     color: #fff;
+    
+    text-shadow: 0 0 2px #000;
 }
 
 #global-header #title a {
@@ -187,8 +193,7 @@ body {
 #content {
     min-width: 820px;
     
-    overflow-x: hidden;
-    overflow-y: visible;
+/*    overflow-x: hidden;*/
     
     padding: 0 10px;
     
@@ -236,7 +241,7 @@ body {
 #posts-wrapper {
     position: relative;
     width: 820px;
-    margin: 40px auto 0;
+    margin: 60px auto 0;
 }
 
 #posts {
@@ -245,15 +250,12 @@ body {
     
     z-index: 100;
     
-    overflow-x: visible;
-    
     opacity: 0;
 }
 
 #posts .post {
     width: 820px;
     margin-right: 200px;
-    opacity: 0.2;
     
     position: absolute;
     display: block;
@@ -263,6 +265,82 @@ body {
     
 }
 
+#posts .post .body {
+    opacity: 0.2;
+    -webkit-transition: all 0.1s ease-in-out;
+}
+#posts .post.focus .body {
+    opacity: 1;
+}
+
+#posts .post .meta {
+    position: absolute;
+    top: -70px;
+    width: 100%;
+}
+
+#posts .post .meta .date {
+    font-size: 14px;
+    display: inline-block;
+    
+    text-align: center;
+    line-height: 1em;
+    padding: 15px 15px 10px;
+    
+    font-family: arial;
+    
+    background: transparent url("images/bg-black.jpg");
+    
+    border-radius: 3px;
+    color: #666;
+    color: rgba(255, 255, 255, 0.1);
+    
+    -webkit-transition: color 1s ease-in, text-shadow 1s ease-in-out;
+}
+
+#posts .post.focus .meta .date {
+    color: #eee;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 3px #fff;
+}
+
+#posts .post .meta .line {
+    display: inline-block;
+    vertical-align: top;
+    padding: 13px 0 0 5px;
+    font-size: 14px;
+    
+    opacity: 0;
+}
+
+#posts .post.focus .meta .line {
+    -webkit-transition: opacity 0.2s ease-out;
+    opacity: 1.0;
+}
+
+#posts .post .meta .line a {
+    color: #777;
+    line-height: 1em;
+}
+
+#posts .post .meta .line .permalink {
+    background: url("images/permalink.png") no-repeat 0 0px;
+    padding-left: 22px;
+    margin-left: 5px;
+    height: 18px;
+}
+
+#posts .post .meta .line .tweet {
+    background: url("images/tweet.png") no-repeat 0 0px;
+    margin-left: 20px;
+    padding-left: 22px;
+}
+
+#posts .post .meta .line .note-count {
+    background: url("images/notes.png") no-repeat 0 0px;
+    margin-left: 20px;
+    padding-left: 22px;
+}
 
 
 a {

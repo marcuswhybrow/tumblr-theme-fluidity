@@ -90,12 +90,6 @@ $(function() {
         $('#posts').animate({
             'left': - $('#posts .post.focus').first().position().left
         }, 100);
-        
-        $('#posts .post.focus').animate({
-            'opacity': 1.0
-        }, 200).siblings().animate({
-            'opacity': 0.2
-        }, 200);
     }
     
     
