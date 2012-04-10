@@ -86,7 +86,7 @@
               {block:Answer}
                 <header class="question">
                   <section class="lead">In response to this question by {Asker}:</div>
-                  <div>{Question}
+                  <div>{Question}</div>
                 </header>
                 <!-- For more "AskerPortraitURL" sizes see: http://www.tumblr.com/docs/en/custom_themes#answer-posts -->
                 <div class="asker-wrapper"><img src="{AskerPortraitURL-24}">{Asker}</div>
@@ -94,22 +94,23 @@
               {/block:Answer}
             
               {block:Chat}
-                {block:Title}<div class="title">{Title}</div>{/block:Title}
-                <div class="chat">
-                  <div class="lines">
+                {block:Title}
+                  <h1 class="title">Chat: {Title}</h1>
+                {/block:Title}
+                <section>
+                  <h2 class="g-invisible">Transcript</h2>
+                  <div class="transcript">
                     {block:Lines}
-                      <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
+                      <div class="line {Alt}">
+                        {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
+                      </div>
                     {/block:Lines}
                   </div>
-                </div>
-                <div class="clear"></div>
-                <div style="height:10px;"></div>
+                </section>
               {/block:Chat}
             
               {block:Link}
-                <header class="link">
-                  <h1><a href="{URL}" {Target}>{Name} &raquo;</a></h1>
-                </header>
+                <h1 class="link"><a href="{URL}" {Target}>{Name} &raquo;</a></h1>
                 {block:Description}
                   <section class="description copy">
                     <h2 class="g-invisible">Description</h2>

@@ -259,6 +259,12 @@ body {
 /* Post Type Styles
 -------------------------------------------------------------------------------*/
 
+#posts .post h1.title {
+    font-size: 38px;
+    line-height: 1em;
+    margin-bottom: 20px;
+}
+
 #posts .post p {
     margin-bottom: 1.7em;
 }
@@ -270,11 +276,8 @@ body {
 
 /* Text Post */
 
-#posts .post.text .title {
-    font-size: 38px;
-    line-height: 1em;
-    margin-bottom: 20px;
-}
+#posts .post.text .title {}
+#posts .post.text .copy {}
 
 
 /* Answer Post */
@@ -283,22 +286,30 @@ body {
     background-color: #eee;
     text-align: center;
 }
-#posts .post.answer .asker-wrapper {
-    
-}
-#posts .post.answer .answer {
-    
-}
+#posts .post.answer .asker-wrapper {}
+#posts .post.answer .answer {}
 
 
 /* Link Post */
 
-#posts .post.link .link h1 {
+#posts .post.link .link {
     font-size: 38px;
     padding-bottom: 20px;
 }
-#posts .post.link .description {
-    
+#posts .post.link .description {}
+
+
+/* Chat Post */
+
+#posts .post.chat .title {}
+#posts .post.chat .transcript {}
+#posts .post.chat .transcript .line {
+    padding-bottom: 10px;
+}
+#posts .post.chat .transcript .line.odd {}
+#posts .post.chat .transcript .line.even {}
+#posts .post.chat .transcript .line .label {
+    font-weight: bold;
 }
 
 
